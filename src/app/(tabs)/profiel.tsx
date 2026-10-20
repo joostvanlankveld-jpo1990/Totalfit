@@ -66,8 +66,9 @@ export default function Profiel() {
           {membership && <Text style={s.passStatus}>{membership.status}</Text>}
         </View>
       </View>
+      <Button title="Inchecken met QR-code" icon="qr-code" variant="lime" onPress={() => router.push('/inchecken')} style={{ marginTop: space.md }} />
       {!membership && (
-        <Button title="Lid worden" variant="lime" onPress={() => router.push('/lidmaatschap')} style={{ marginTop: space.md }} />
+        <Button title="Lid worden" variant="secondary" onPress={() => router.push('/lidmaatschap')} style={{ marginTop: space.sm }} />
       )}
 
       <SectionTitle title="Mijn lessen" />

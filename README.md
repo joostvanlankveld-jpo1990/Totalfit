@@ -15,6 +15,7 @@ Nieuwe app voor iPhone (en straks Android) voor Total Fit Vlijmen, gebouwd met
 | **Lessen** | Rooster voor 14 dagen, filter op type, inschrijven, uitschrijven (tot 2 uur vooraf), wachtlijst bij volle lessen |
 | **Webshop** | Producten met correcte prijzen, winkelmand met juiste totalen, betaalmethode kiezen, bestelhistorie |
 | **Lid worden** | Abonnement kiezen, gegevens + IBAN invullen, overzicht eerste betaling |
+| **Inchecken** | QR-code met lidnummer om bij de ingang te scannen, met lopende klok (geen screenshot) |
 | **Profiel** | Digitale ledenpas, mijn lessen, wachtlijst, bestellingen, uitloggen, account verwijderen |
 
 Bedragen worden overal in hele centen opgeslagen (`src/lib/format.ts`), dus de
@@ -27,6 +28,7 @@ De app werkt volledig, maar de gegevens zijn **voorbeelddata** en worden alleen 
 - **Lessen, prijzen, abonnementen** staan in `src/data/catalog.ts`. Pas ze daar aan.
 - **Inloggen** accepteert elk e-mailadres met een wachtwoord van 6+ tekens.
 - **Betalen** wordt gesimuleerd.
+- **QR-code inchecken** bevat nu alleen het lidnummer. Welk formaat de scanner bij de ingang verwacht hangt af van het toegangssysteem; dat moet nog afgestemd worden (zie `getCheckInCode` in `src/data/api.ts`).
 
 Om de app echt te gebruiken is een **backend** nodig (de plek waar leden, boekingen en
 bestellingen centraal staan). Opties:

@@ -78,9 +78,9 @@ export default function Home() {
           <QuickAction icon="calendar-outline" label="Lessen" onPress={() => router.navigate('/lessen')} />
           <QuickAction icon="bag-handle-outline" label="Webshop" onPress={() => router.navigate('/shop')} />
           <QuickAction
-            icon={membership ? 'card-outline' : 'person-add-outline'}
-            label={membership ? 'Mijn pas' : 'Lid worden'}
-            onPress={() => router.navigate(membership ? '/profiel' : '/lidmaatschap')}
+            icon={user ? 'qr-code-outline' : 'person-add-outline'}
+            label={user ? 'Inchecken' : 'Lid worden'}
+            onPress={() => router.push(user ? '/inchecken' : '/lidmaatschap')}
           />
         </View>
 

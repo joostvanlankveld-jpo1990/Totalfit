@@ -25,6 +25,7 @@ export default function RootLayout() {
           <Stack.Screen name="inloggen" options={{ title: 'Inloggen', presentation: 'modal' }} />
           <Stack.Screen name="lidmaatschap" options={{ title: 'Lid worden' }} />
           <Stack.Screen name="bestellingen" options={{ title: 'Mijn bestellingen' }} />
+          <Stack.Screen name="inchecken" options={{ title: 'Inchecken', presentation: 'modal' }} />
         </Stack>
       </AppStoreProvider>
     </SafeAreaProvider>

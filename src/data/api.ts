@@ -2,7 +2,7 @@
 // de echte backend (bijv. een API van het ledensysteem) zonder de schermen aan te passen.
 import { dateKey } from '../lib/format';
 import { WEEKLY_SCHEDULE, classTypeById } from './catalog';
-import { ClassSession } from './types';
+import { ClassSession, User } from './types';
 
 export const SCHEDULE_DAYS = 14;
 
@@ -41,4 +41,14 @@ export function getSchedule(from = new Date(), days = SCHEDULE_DAYS): ClassSessi
 
 export function getSessionById(id: string): ClassSession | undefined {
   return getSchedule(new Date(Date.now() - 86400000), SCHEDULE_DAYS + 1).find((s) => s.id === id);
+}
+
+/**
+ * Inhoud van de QR-code voor het inchecken bij de scanner bij de ingang.
+ * Nu is dat alleen het lidnummer. Het echte formaat hangt af van het toegangssysteem
+ * van de sportschool. Liefst geeft de backend een kortlevende, ondertekende code,
+ * zodat een screenshot van de code niet door iemand anders gebruikt kan worden.
+ */
+export function getCheckInCode(user: User): string {
+  return user.memberNumber;
 }
